@@ -1,4 +1,4 @@
-import subprocess, requests, psutil, json
+import subprocess, requests, psutil, json, os
 
 print("Fetching models...")
 try:
@@ -38,3 +38,13 @@ for nameOrSo, models in modelList.items():
         if solutions['gguf']:
             print(f"Fetching {solutions['gguf']}")
             result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
+
+config = ""
+print("Generating config.ini")
+models = os.listdir(f"models/")
+for model in models:
+    config += f"""
+[{model}]
+model = models/{model}
+"""
+with open("config.ini", 'w') as file: file.write(config)
