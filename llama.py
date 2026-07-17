@@ -46,6 +46,6 @@ for model in models:
     if not model.endswith(".gguf"): continue
     config += f"""
 [{model}]
-model = models/{model}
+model = models/{model.replace('.gguf','')}
 """
 with open("config.ini", 'w') as file: file.write(config)
