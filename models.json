@@ -1,6 +1,14 @@
 {
+    "Ornith": {
+        "unsloth/Ornith-1.0-9B-GGUF":"",
+        "unsloth/Ornith-1.0-35B-GGUF":""
+    },
     "Gemma":{
         "unsloth/gemma-4-26B-A4B-it-GGUF":"",
         "unsloth/gemma-4-31B-it-qat-GGUF":""
+    },
+    "Qwen": {
+        "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":"",
+        "unsloth/Qwen3.6-27B-MTP-GGUF":""
     }
 }
