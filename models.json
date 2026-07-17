@@ -1,14 +1,18 @@
 {
     "Ornith": {
-        "unsloth/Ornith-1.0-9B-GGUF":"",
-        "unsloth/Ornith-1.0-35B-GGUF":""
+        "unsloth/Ornith-1.0-9B-GGUF":{"min":5.7},
+        "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
     },
     "Gemma":{
-        "unsloth/gemma-4-26B-A4B-it-GGUF":"",
-        "unsloth/gemma-4-31B-it-qat-GGUF":""
+        "unsloth/gemma-4-26B-A4B-it-GGUF":{"min":16.9},
+        "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3}
     },
     "Qwen": {
-        "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":"",
-        "unsloth/Qwen3.6-27B-MTP-GGUF":""
+        "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
+        "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1}
+    },
+    "NVIDIA":{
+        "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
+        "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
     }
 }
