@@ -8,10 +8,11 @@ try:
 except Exception as e:
     exit(f"Unable to fetch/load models.json: {e}")
 
+availableMemory = int(psutil.virtual_memory()[2])
 for nameOrSo, models in modelList.items():
     print(f"Checking {nameOrSo}")
-    goal = 6
-    for model in models:
+    for model, data in models.items():
+        if data['min'] > availableMemory: continue
         splitted = model.split("/")
         print(f"Getting {splitted[1]} from {splitted[0]}")
         try:
@@ -20,7 +21,6 @@ for nameOrSo, models in modelList.items():
             files = req.json()
         except Exception as e:
             print(f"Unable to fetch file list for model {splitted[1]}")
-        availableMemory = int(psutil.virtual_memory()[2])
         targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf"]
         solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
         for file in files:
