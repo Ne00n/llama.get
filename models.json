@@ -12,10 +12,15 @@
         "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
         "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
         "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
-        "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1}
+        "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true},
+        "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1},
+        "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-NVFP4-GGUF":{"min":19.7,"uncensored":true}
     },
     "NVIDIA":{
         "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
         "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
+    },
+    "SicariusSicariiStuff": {
+        "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"uncensored":true}
     }
 }
