@@ -1,5 +1,6 @@
 {
-    "gemma":{
-        "unsloth/gemma-4-26B-A4B-it-GGUF":""
+    "Gemma":{
+        "unsloth/gemma-4-26B-A4B-it-GGUF":"",
+        "unsloth/gemma-4-31B-it-qat-GGUF":""
     }
 }
