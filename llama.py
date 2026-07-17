@@ -39,7 +39,10 @@ for nameOrSo, models in modelList.items():
             print(f"Fetching {solutions['gguf']}")
             result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
 
-config = ""
+config = """
+[*]
+c = 64000
+"""
 print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
