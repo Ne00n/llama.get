@@ -43,6 +43,7 @@ config = ""
 print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
+    if not model.endswith(".gguf"): continue
     config += f"""
 [{model}]
 model = models/{model}
