@@ -1,4 +1,4 @@
-import subprocess, requests, json
+import subprocess, requests, psutil, json
 
 print("Fetching models...")
 try:
@@ -20,7 +20,7 @@ for nameOrSo, models in modelList.items():
             files = req.json()
         except Exception as e:
             print(f"Unable to fetch file list for model {splitted[1]}")
-        availableMemory = 8
+        availableMemory = int(psutil.virtual_memory()[2])
         targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf"]
         solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
         for file in files:
