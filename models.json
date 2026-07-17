@@ -4,10 +4,13 @@
         "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
     },
     "Gemma":{
-        "unsloth/gemma-4-26B-A4B-it-GGUF":{"min":16.9},
+        "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
+        "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
         "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3}
     },
     "Qwen": {
+        "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
+        "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
         "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
         "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1}
     },
