@@ -45,7 +45,7 @@ models = os.listdir(f"models/")
 for model in models:
     if not model.endswith(".gguf"): continue
     config += f"""
-[{model}]
-model = models/{model.replace('.gguf','')}
+[{model.replace('.gguf','')}]
+model = models/{model}
 """
 with open("config.ini", 'w') as file: file.write(config)
