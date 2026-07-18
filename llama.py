@@ -67,7 +67,7 @@ model = models/{model}
         if mapping[model]['mmproj']:
             config += f"mmproj = models/{mapping[model]['mmproj']}\n"
         if "Instruct" in profile:
-            config += 'chat-template-kwargs = {"enable_thinking": false}'
+            config += 'chat-template-kwargs = {"enable_thinking": false}\n'
         for key, value in settings.items():
             config += f"{key} = {value}\n"
 
