@@ -35,6 +35,8 @@
         }
     },
     "NVIDIA":{
+        "settings":{"General":{"temperature":1.0,"top_p":1.0}
+        },
         "models":{
             "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
             "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
