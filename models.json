@@ -5,7 +5,9 @@
         "models":{
             "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
             "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
-            "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3}
+            "mradermacher/gemma-4-19B-A4B-it-The-DECKARD-Heretic-Uncensored-Thinking-i1-GGUF":{"min":8.3},
+            "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3},
+            "mradermacher/gemma-4-31B-it-The-DECKARD-HERETIC-UNCENSORED-Thinking-i1-GGUF":{"min":12.1}
         }
     },
     "Qwen3.5": {
