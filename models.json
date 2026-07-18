@@ -15,8 +15,8 @@
         }
     },
     "Qwen3.5": {
-        "settings":{"Instruct":{"temperature":0.7,"top_p":0.8,"top_k":20},
-                    "Thinking":{"temperature":1.0,"top_p":0.95,"top_k":20}
+        "settings":{"Instruct":{"temperature":0.7,"top_p":0.8,"top_k":20,"min_p":0.0,"presence_penalty":1.5},
+                    "Thinking":{"temperature":1.0,"top_p":0.95,"top_k":20,"min_p":0.0,"presence_penalty":1.5}
         },
         "models":{
             "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
