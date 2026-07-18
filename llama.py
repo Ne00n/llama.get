@@ -45,6 +45,11 @@ for category, dataset in modelList.items():
             if solutions['gguf']:
                 print(f"Fetching {solutions['gguf']}")
                 result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
+            if solutions['mmproj']:
+                print(f"Fetching {solutions['mmproj']}")
+                result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
+                mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
+                os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}") 
 
 config = """[*]
 c = 64000
@@ -52,7 +57,7 @@ c = 64000
 print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
-    if not model.endswith(".gguf"): continue
+    if not model.endswith(".gguf") or "mmproj" in model: continue
     for profile, settings in mapping[model].items():
         config += f"""
 [{model.replace('.gguf','')}:{profile}]
