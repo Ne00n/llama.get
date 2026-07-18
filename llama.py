@@ -53,11 +53,12 @@ print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
     if not model.endswith(".gguf"): continue
-    config += f"""
-[{model.replace('.gguf','')}]
+    for profile, settings in mapping[model].items():
+        config += f"""
+[{model.replace('.gguf','')}:{profile}]
 model = models/{model}
 """
-    for key, value in mapping[model].items():
-        config += f"{key} = {value}\n"
+        for key, value in settings.items():
+            config += f"{key} = {value}\n"
 
 with open("config.ini", 'w') as file: file.write(config)
