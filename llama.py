@@ -37,7 +37,6 @@ for category, dataset in modelList.items():
                         if solutions['ggufSize'] < int(file['size']):
                             solutions["gguf"] = file['path']
                             solutions['ggufSize'] = int(file['size'])
-                            mapping[file['path']] = settings
                         break
                 if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
                     solutions["mmproj"] = file['path']
@@ -45,11 +44,13 @@ for category, dataset in modelList.items():
             if solutions['gguf']:
                 print(f"Fetching {solutions['gguf']}")
                 result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
+                mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
             if solutions['mmproj']:
                 print(f"Fetching {solutions['mmproj']}")
                 result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
                 mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
-                os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}") 
+                os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
+                mapping[solutions['gguf']]['mmproj'] = mmprojFile
 
 config = """[*]
 c = 64000
@@ -58,11 +59,13 @@ print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
     if not model.endswith(".gguf") or "mmproj" in model: continue
-    for profile, settings in mapping[model].items():
+    for profile, settings in mapping[model]['settings'].items():
         config += f"""
 [{model.replace('.gguf','')}:{profile}]
 model = models/{model}
 """
+        if mapping[model]['mmproj']:
+            config += f"mmproj = models/{mapping[model]['mmproj']}\n"
         for key, value in settings.items():
             config += f"{key} = {value}\n"
 
