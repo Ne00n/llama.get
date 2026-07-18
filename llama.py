@@ -9,6 +9,7 @@ except Exception as e:
     exit(f"Unable to fetch/load models.json: {e}")
 
 mapping = {}
+targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf"]
 availableMemory = int(psutil.virtual_memory().total) / 1024 / 1024 / 1024
 for category, dataset in modelList.items():
     print(f"Checking {category}")
@@ -27,7 +28,6 @@ for category, dataset in modelList.items():
                 files = req.json()
             except Exception as e:
                 print(f"Unable to fetch file list for model {splitted[1]}")
-            targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf"]
             solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
             for file in files:
                 size = int(file['size'] / 1024**3)
@@ -42,14 +42,16 @@ for category, dataset in modelList.items():
                     solutions["mmproj"] = file['path']
                     solutions['mmprojSize'] = int(file['size'])
             if solutions['gguf']:
-                print(f"Fetching {solutions['gguf']}")
-                result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
+                if not os.path.isfile(f"models/{solutions['gguf']}"):
+                    print(f"Fetching {solutions['gguf']}")
+                    result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
                 mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
             if solutions['mmproj']:
-                print(f"Fetching {solutions['mmproj']}")
-                result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
                 mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
-                os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
+                if not os.path.isfile(f"models/{mmprojFile}"):
+                    print(f"Fetching {solutions['mmproj']}")
+                    result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
+                    os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
                 mapping[solutions['gguf']]['mmproj'] = mmprojFile
 
 config = """[*]
