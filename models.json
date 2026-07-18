@@ -1,26 +1,41 @@
 {
     "Ornith": {
-        "unsloth/Ornith-1.0-9B-GGUF":{"min":5.7},
-        "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
+        "models":{
+            "unsloth/Ornith-1.0-9B-GGUF":{"min":5.7},
+            "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
+        }
     },
-    "Gemma":{
-        "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
-        "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
-        "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3}
+    "Gemma 4":{
+        "settings":{"temperature":1.0,"top_p":0.95,"top_k":64},
+        "models":{
+            "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
+            "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
+            "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3}
+        }
     },
-    "Qwen": {
-        "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
-        "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
-        "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
-        "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true},
-        "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1},
-        "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-NVFP4-GGUF":{"min":19.7,"uncensored":true}
+    "Qwen3.5": {
+        "models":{
+            "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
+            "unsloth/Qwen3.5-9B-GGUF":{"min":5.6}
+        }
+    },
+    "Qwen3.6": {
+        "models":{
+            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
+            "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true},
+            "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1},
+            "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-NVFP4-GGUF":{"min":19.7,"uncensored":true}
+        }
     },
     "NVIDIA":{
-        "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
-        "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
+        "models":{
+            "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
+            "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
+        }
     },
     "SicariusSicariiStuff": {
-        "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"uncensored":true}
+        "models":{
+            "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"uncensored":true}
+        }
     }
 }
