@@ -11,9 +11,9 @@ except Exception as e:
 availableMemory = int(psutil.virtual_memory()[2])
 for category, dataset in modelList.items():
     print(f"Checking {category}")
-    for entry, models in dataset.items():
-        print(entry,models)
-        for model, data in models.items():
+    for entry, rows in dataset.items():
+        if entry == "settings": continue
+        for model, data in rows.items():
             if data['min'] > availableMemory: continue
             splitted = model.split("/")
             print(f"Getting {splitted[1]} from {splitted[0]}")
