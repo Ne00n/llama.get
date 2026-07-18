@@ -20,7 +20,10 @@
         },
         "models":{
             "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
-            "unsloth/Qwen3.5-9B-GGUF":{"min":5.6}
+            "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
+            "unsloth/Qwen3.5-27B-GGUF":{"min":16.7},
+            "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22},
+            "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":78.3}
         }
     },
     "Qwen3.6": {
@@ -39,7 +42,8 @@
         },
         "models":{
             "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
-            "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9}
+            "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9},
+            "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF":{"min":82.5}
         }
     },
     "SicariusSicariiStuff": {
