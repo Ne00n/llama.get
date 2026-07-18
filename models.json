@@ -16,7 +16,9 @@
             "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
             "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
             "unsloth/Qwen3.5-27B-GGUF":{"min":16.7},
+            "llmfan46/Qwen3.5-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2},
             "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22},
+            "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8},
             "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":78.3}
         }
     },
@@ -28,7 +30,7 @@
             "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
             "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true},
             "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1},
-            "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-NVFP4-GGUF":{"min":19.7,"uncensored":true}
+            "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"uncensored":true}
         }
     },
     "NVIDIA":{
