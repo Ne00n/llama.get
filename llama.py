@@ -11,8 +11,11 @@ except Exception as e:
 availableMemory = int(psutil.virtual_memory().total) / 1024 / 1024 / 1024
 for category, dataset in modelList.items():
     print(f"Checking {category}")
+    settings = {}
     for entry, rows in dataset.items():
-        if entry == "settings": continue
+        if entry == "settings": 
+            settings = rows
+            continue
         for model, data in rows.items():
             if data['min'] > availableMemory: continue
             splitted = model.split("/")
@@ -33,6 +36,7 @@ for category, dataset in modelList.items():
                         if solutions['ggufSize'] < int(file['size']):
                             solutions["gguf"] = file['path']
                             solutions['ggufSize'] = int(file['size'])
+                            solutions['settings'] = settings
                         break
                 if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
                     solutions["mmproj"] = file['path']
