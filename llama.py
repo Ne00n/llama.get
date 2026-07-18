@@ -8,7 +8,7 @@ try:
 except Exception as e:
     exit(f"Unable to fetch/load models.json: {e}")
 
-availableMemory = int(psutil.virtual_memory()[2])
+availableMemory = int(psutil.virtual_memory().total) / 1024 / 1024 / 1024
 for category, dataset in modelList.items():
     print(f"Checking {category}")
     for entry, rows in dataset.items():
