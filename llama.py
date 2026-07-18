@@ -61,6 +61,9 @@ print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
     if not model.endswith(".gguf") or "mmproj" in model: continue
+    if not model in mapping:
+        print(f"{model} not in mapping! Skipping.")
+        continue
     for profile, settings in mapping[model]['settings'].items():
         config += f"""
 [{model.replace('.gguf','')}:{profile}]
