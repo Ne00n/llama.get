@@ -6,7 +6,8 @@
         }
     },
     "Gemma 4":{
-        "settings":{"temperature":1.0,"top_p":0.95,"top_k":64},
+        "settings":{"General":{"temperature":1.0,"top_p":0.95,"top_k":64}
+        },
         "models":{
             "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
             "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
@@ -14,6 +15,9 @@
         }
     },
     "Qwen3.5": {
+        "settings":{"Instruct":{"temperature":0.7,"top_p":0.8,"top_k":20},
+                    "Thinking":{"temperature":1.0,"top_p":0.95,"top_k":20}
+        },
         "models":{
             "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
             "unsloth/Qwen3.5-9B-GGUF":{"min":5.6}
