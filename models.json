@@ -1,12 +1,4 @@
 {
-    "Ornith": {
-        "settings":{"General":{}
-        },
-        "models":{
-            "unsloth/Ornith-1.0-9B-GGUF":{"min":5.7},
-            "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
-        }
-    },
     "Gemma 4":{
         "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
         },
