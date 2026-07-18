@@ -8,6 +8,7 @@ try:
 except Exception as e:
     exit(f"Unable to fetch/load models.json: {e}")
 
+mapping = {}
 availableMemory = int(psutil.virtual_memory().total) / 1024 / 1024 / 1024
 for category, dataset in modelList.items():
     print(f"Checking {category}")
@@ -36,7 +37,7 @@ for category, dataset in modelList.items():
                         if solutions['ggufSize'] < int(file['size']):
                             solutions["gguf"] = file['path']
                             solutions['ggufSize'] = int(file['size'])
-                            solutions['settings'] = settings
+                            mapping[file['path']] = settings
                         break
                 if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
                     solutions["mmproj"] = file['path']
@@ -56,4 +57,7 @@ for model in models:
 [{model.replace('.gguf','')}]
 model = models/{model}
 """
+    for key, value in mapping[model].items():
+        config += f"{key} = {value}\n"
+
 with open("config.ini", 'w') as file: file.write(config)
