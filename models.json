@@ -8,7 +8,7 @@
         }
     },
     "Gemma 4":{
-        "settings":{"General":{"temperature":1.0,"top_p":0.95,"top_k":64}
+        "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
         },
         "models":{
             "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
@@ -17,8 +17,8 @@
         }
     },
     "Qwen3.5": {
-        "settings":{"Instruct":{"temperature":0.7,"top_p":0.8,"top_k":20,"min_p":0.0,"presence_penalty":1.5},
-                    "Thinking":{"temperature":1.0,"top_p":0.95,"top_k":20,"min_p":0.0,"presence_penalty":1.5}
+        "settings":{"Instruct":{"temperature":0.7,"top-p":0.8,"top-k":20,"min-p":0.0,"presence-penalty":1.5},
+                    "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":1.5}
         },
         "models":{
             "unsloth/Qwen3.5-4B-GGUF":{"min":2.7},
@@ -29,8 +29,8 @@
         }
     },
     "Qwen3.6": {
-        "settings":{"Instruct":{"temperature":0.7,"top_p":0.8,"top_k":20,"min_p":0.0,"presence_penalty":1.5},
-                    "Thinking":{"temperature":1.0,"top_p":0.95,"top_k":20,"min_p":0.0,"presence_penalty":0.0}
+        "settings":{"Instruct":{"temperature":0.7,"top-p":0.8,"top-k":20,"min-p":0.0,"presence-penalty":1.5},
+                    "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0}
         },
         "models":{
             "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
@@ -40,7 +40,7 @@
         }
     },
     "NVIDIA":{
-        "settings":{"General":{"temperature":1.0,"top_p":1.0}
+        "settings":{"General":{"temperature":1.0,"top-p":1.0}
         },
         "models":{
             "unsloth/NVIDIA-Nemotron-3-Nano-4B-GGUF":{"min":2.9},
