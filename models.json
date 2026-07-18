@@ -1,5 +1,7 @@
 {
     "Ornith": {
+        "settings":{"General":{}
+        },
         "models":{
             "unsloth/Ornith-1.0-9B-GGUF":{"min":5.7},
             "unsloth/Ornith-1.0-35B-GGUF":{"min":22.1}
@@ -47,6 +49,8 @@
         }
     },
     "SicariusSicariiStuff": {
+        "settings":{"General":{}
+        },
         "models":{
             "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"uncensored":true}
         }
