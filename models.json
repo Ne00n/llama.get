@@ -4,10 +4,16 @@
         },
         "models":{
             "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
-            "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2},
-            "mradermacher/gemma-4-19B-A4B-it-The-DECKARD-Heretic-Uncensored-Thinking-i1-GGUF":{"min":8.3},
             "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3},
             "mradermacher/gemma-4-31B-it-The-DECKARD-HERETIC-UNCENSORED-Thinking-i1-GGUF":{"min":12.1}
+        }
+    },
+    "Gemma 4 MoE":{
+        "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
+        },
+        "models":{
+            "mradermacher/gemma-4-19B-A4B-it-The-DECKARD-Heretic-Uncensored-Thinking-i1-GGUF":{"min":8.3},
+            "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2}
         }
     },
     "Qwen3.5": {
@@ -19,6 +25,14 @@
             "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
             "unsloth/Qwen3.5-27B-GGUF":{"min":16.7},
             "llmfan46/Qwen3.5-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2},
+            "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1}
+        }
+    },
+    "Qwen3.5 MoE": {
+        "settings":{"Instruct":{"temperature":0.7,"top-p":0.8,"top-k":20,"min-p":0.0,"presence-penalty":1.5},
+                    "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":1.5}
+        },
+        "models":{
             "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22},
             "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8},
             "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1},
@@ -30,10 +44,17 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
-            "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true},
             "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1},
             "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"uncensored":true}
+        }
+    },
+    "Qwen3.6 MoE": {
+        "settings":{"Instruct":{"temperature":0.7,"top-p":0.8,"top-k":20,"min-p":0.0,"presence-penalty":1.5,"spec-type":"draft-mtp","spec-draft-n-max":"2"},
+                    "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
+        },
+        "models":{
+            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
+            "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true}
         }
     },
     "NVIDIA":{
