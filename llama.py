@@ -10,7 +10,7 @@ except Exception as e:
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","IQ3_XXS.gguf"]
-availableMemory = int(psutil.virtual_memory().total) / 1024 / 1024 / 1024
+availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for category, dataset in modelList.items():
     print(f"Checking {category}")
     settings = {}
