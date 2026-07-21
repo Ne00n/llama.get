@@ -72,5 +72,11 @@
         "models":{
             "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"uncensored":true}
         }
+    },
+    "poolside":{
+        "settings":{"General":{}
+    },
+    "models":{
+        "poolside/Laguna-XS-2.1-GGUF":{"min":20.3}
     }
 }
