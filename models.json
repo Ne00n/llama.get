@@ -75,8 +75,9 @@
     },
     "poolside":{
         "settings":{"General":{}
-    },
-    "models":{
-        "poolside/Laguna-XS-2.1-GGUF":{"min":20.3}
+        },
+        "models":{
+            "poolside/Laguna-XS-2.1-GGUF":{"min":20.3}
+        }
     }
 }
