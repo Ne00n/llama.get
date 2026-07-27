@@ -81,5 +81,12 @@
             "unsloth/Laguna-S-2.1-GGUF":{"min":44.3},
             "poolside/Laguna-S-2.1-GGUF":{"min":75.2}
         }
+    },
+    "KAT-Coder-V2.5-Dev":{
+        "settings":{"General":{}
+        },
+        "models":{
+            "bartowski/Kwaipilot_KAT-Coder-V2.5-Dev-GGUF":{"min":14.9}
+        }
     }
 }
