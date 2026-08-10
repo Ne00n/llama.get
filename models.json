@@ -3,7 +3,6 @@
         "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
         },
         "models":{
-            "unsloth/gemma-4-12B-it-qat-GGUF":{"min":6.7},
             "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3},
             "mradermacher/gemma-4-31B-it-The-DECKARD-HERETIC-UNCENSORED-Thinking-i1-GGUF":{"min":12.1}
         }
@@ -21,7 +20,6 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":1.5}
         },
         "models":{
-            "unsloth/Qwen3.5-9B-GGUF":{"min":5.6},
             "unsloth/Qwen3.5-27B-GGUF":{"min":16.7},
             "llmfan46/Qwen3.5-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2},
             "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1}
@@ -54,14 +52,6 @@
         "models":{
             "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7},
             "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"uncensored":true}
-        }
-    },
-    "NVIDIA":{
-        "settings":{"General":{"temperature":1.0,"top-p":1.0}
-        },
-        "models":{
-            "unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF":{"min":23.9},
-            "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B-GGUF":{"min":82.5}
         }
     },
     "SicariusSicariiStuff": {
