@@ -92,7 +92,14 @@
         "settings":{"General":{}
         },
         "models":{
-            "AtomicChat/Ling-3.0-flash-GGUF":{"min":57.1}
+            "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1}
+        }
+    },
+    "Muse-Gimmer":{
+        "settings":{"General":{}
+        },
+        "models":{
+            "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1}
         }
     }
 }
