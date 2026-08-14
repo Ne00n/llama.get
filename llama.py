@@ -16,39 +16,35 @@ targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.g
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for category, dataset in modelList.items():
     print(f"Checking {category}")
-    settings = {}
-    for entry, rows in dataset.items():
-        if entry == "settings": 
-            settings = rows
-            continue
-        for model, data in rows.items():
-            if data['min'] > availableMemory: continue
-            files = fetch(f"https://huggingface.co/api/models/{model}/tree/main")
-            solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
-            for file in files:
-                size = int(file['size'] / 1024**3)
-                if size >= availableMemory: continue
-                for target in targets:
-                    if target in file['path']:
-                        if solutions['ggufSize'] < int(file['size']):
-                            solutions["gguf"] = file['path']
-                            solutions['ggufSize'] = int(file['size'])
-                        break
-                if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
-                    solutions["mmproj"] = file['path']
-                    solutions['mmprojSize'] = int(file['size'])
-            if solutions['gguf']:
-                if not os.path.isfile(f"models/{solutions['gguf']}"):
-                    print(f"Fetching {solutions['gguf']}")
-                    result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
-                mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
-            if solutions['mmproj']:
-                mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
-                if not os.path.isfile(f"models/{mmprojFile}"):
-                    print(f"Fetching {solutions['mmproj']}")
-                    result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
-                    os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
-                mapping[solutions['gguf']]['mmproj'] = mmprojFile
+    settings = dataset['settings']
+    for model, data in dataset['models'].items():
+        if data['min'] > availableMemory: continue
+        files = fetch(f"https://huggingface.co/api/models/{model}/tree/main")
+        solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
+        for file in files:
+            size = int(file['size'] / 1024**3)
+            if size >= availableMemory: continue
+            for target in targets:
+                if target in file['path']:
+                    if solutions['ggufSize'] < int(file['size']):
+                        solutions["gguf"] = file['path']
+                        solutions['ggufSize'] = int(file['size'])
+                    break
+            if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
+                solutions["mmproj"] = file['path']
+                solutions['mmprojSize'] = int(file['size'])
+        if solutions['gguf']:
+            if not os.path.isfile(f"models/{solutions['gguf']}"):
+                print(f"Fetching {solutions['gguf']}")
+                result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
+            mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
+        if solutions['mmproj']:
+            mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
+            if not os.path.isfile(f"models/{mmprojFile}"):
+                print(f"Fetching {solutions['mmproj']}")
+                result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
+                os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
+            mapping[solutions['gguf']]['mmproj'] = mmprojFile
 
 config = """[*]
 c = 64000
