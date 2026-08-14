@@ -9,7 +9,7 @@ except Exception as e:
     exit(f"Unable to fetch/load models.json: {e}")
 
 mapping = {}
-targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf","IQ2XXS-w2Q2K-AProjQ8-OutQ8-chat-v2.gguf"]
+targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf"]
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for category, dataset in modelList.items():
     print(f"Checking {category}")
