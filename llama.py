@@ -1,12 +1,15 @@
 import subprocess, requests, psutil, json, os
 
+def fetch(url):
+    try:
+        req = requests.get(url, timeout=(5,5))
+        if req.status_code != 200: raise Exception(req.status_code)
+        return req.json()
+    except Exception as e:
+        exit(f"Unable to fetch {url}: {e}")
+
 print("Fetching models...")
-try:
-    req = requests.get("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json", timeout=(5,5))
-    if req.status_code != 200: raise Exception(req.status_code)
-    modelList = req.json()
-except Exception as e:
-    exit(f"Unable to fetch/load models.json: {e}")
+modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf"]
@@ -20,12 +23,7 @@ for category, dataset in modelList.items():
             continue
         for model, data in rows.items():
             if data['min'] > availableMemory: continue
-            try:
-                req = requests.get(f"https://huggingface.co/api/models/{model}/tree/main", timeout=(5,5))
-                if req.status_code != 200: raise Exception(req.status_code)
-                files = req.json()
-            except Exception as e:
-                print(f"Unable to fetch file list for {model}")
+            files = fetch(f"https://huggingface.co/api/models/{model}/tree/main")
             solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
             for file in files:
                 size = int(file['size'] / 1024**3)
