@@ -89,5 +89,19 @@
         "models":{
             "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1}
         }
+    },
+    "nl2sh":{
+        "settings":{"General":{}
+        },
+        "models":{
+            "ThorOdinson246/nl2sh-1.5b-Q4_K_M":{"min":1.0}
+        }
+    },
+    "Deepseek-v4-Flash":{
+        "settings":{"General":{}
+        },
+        "models":{
+            "unsloth/DeepSeek-V4-Flash-0731-GGUF":{"min":104}
+        }
     }
 }
