@@ -30,7 +30,6 @@ for category, dataset in modelList.items():
         for file in files:
             size = int(file['size'] / 1024**3)
             if size >= availableMemory: continue
-            if uncensored and not "uncensored" in settings['tags']: continue
             for target in targets:
                 if target in file['path']:
                     solutions["gguf"] = file['path']
@@ -38,6 +37,7 @@ for category, dataset in modelList.items():
             if "mmproj" in file['path']:
                 solutions["mmproj"] = file['path']
                 break
+        if uncensored and not "uncensored" in settings['tags']: continue
         if solutions['gguf']:
             if not os.path.isfile(f"models/{solutions['gguf']}"):
                 print(f"Fetching {solutions['gguf']}")
