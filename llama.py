@@ -20,19 +20,18 @@ for category, dataset in modelList.items():
     for model, data in dataset['models'].items():
         if data['min'] > availableMemory: continue
         files = fetch(f"https://huggingface.co/api/models/{model}/tree/main")
-        solutions = {"gguf":"","ggufSize":0,"mmproj":"","mmprojSize":0}
+        files = sorted(files, key=lambda item: item['size'], reverse=True)
+        solutions = {"gguf":"","mmproj":""}
         for file in files:
             size = int(file['size'] / 1024**3)
             if size >= availableMemory: continue
             for target in targets:
                 if target in file['path']:
-                    if solutions['ggufSize'] < int(file['size']):
-                        solutions["gguf"] = file['path']
-                        solutions['ggufSize'] = int(file['size'])
+                    solutions["gguf"] = file['path']
                     break
-            if "mmproj" in file['path'] and solutions['mmprojSize'] < int(file['size']):
+            if "mmproj" in file['path']:
                 solutions["mmproj"] = file['path']
-                solutions['mmprojSize'] = int(file['size'])
+                break
         if solutions['gguf']:
             if not os.path.isfile(f"models/{solutions['gguf']}"):
                 print(f"Fetching {solutions['gguf']}")
