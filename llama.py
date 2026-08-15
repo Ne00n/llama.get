@@ -1,4 +1,4 @@
-import subprocess, requests, psutil, json, os
+import subprocess, requests, psutil, json, sys, os
 
 def fetch(url):
     try:
@@ -10,6 +10,11 @@ def fetch(url):
 
 print("Fetching models...")
 modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
+
+sys.argv = sys.argv[1:]
+uncensored = False
+for param in sys.argv:
+    if param.lower() == "--uncensored": uncensored = True
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf"]
@@ -25,6 +30,7 @@ for category, dataset in modelList.items():
         for file in files:
             size = int(file['size'] / 1024**3)
             if size >= availableMemory: continue
+            if uncensored and not "uncensored" in settings['tags']: continue
             for target in targets:
                 if target in file['path']:
                     solutions["gguf"] = file['path']
