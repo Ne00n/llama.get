@@ -36,7 +36,7 @@
             "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22,"tags":"35B,moe,qwen,unsloth"},
             "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"35B,moe,qwen,uncensored"},
             "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":47.8,"tags":"122B,moe,qwen"},
-            "mudler/Qwen3.5-122B-A10B-APEX-GGUF":{"min":48.3,"tags":"122B,moe,qwen,uncensored"}
+            "mudler/Qwen3.5-122B-A10B-APEX-GGUF":{"min":48.3,"tags":"122B,moe,qwen,uncensored,apex"}
         }
     },
     "Qwen3.6": {
@@ -68,7 +68,7 @@
         "settings":{"General":{}
         },
         "models":{
-            "mudler/Laguna-XS-2.1-APEX-GGUF":{"min":12.8,"tags":"moe,laguna,uncensored"},
+            "mudler/Laguna-XS-2.1-APEX-GGUF":{"min":12.8,"tags":"moe,laguna,uncensored,apex"},
             "poolside/Laguna-XS-2.1-GGUF":{"min":20.3,"tags":"moe,laguna,unsloth"},
             "unsloth/Laguna-S-2.1-GGUF":{"min":44.3,"tags":"moe,laguna,unsloth"},
             "mradermacher/Laguna-S-2.1-Heretic-i1-GGUF":{"min":45.2,"tags":"moe,laguna,uncensored"}
@@ -92,14 +92,15 @@
         "settings":{"General":{}
         },
         "models":{
-            "SC117/Ling-3.0-tiny-abliterated-APEX-GGUF":{"min":3.4,"tags":"moe,ling,uncensored"}
+            "SC117/Ling-3.0-tiny-abliterated-APEX-GGUF":{"min":3.4,"tags":"moe,ling,uncensored,apex"}
         }
     },
     "Muse-Gimmer":{
         "settings":{"General":{}
         },
         "models":{
-            "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1,"tags":"30B,dense,meta"}
+            "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1,"tags":"30B,dense,meta"},
+            "Blackfrost-AI/Muse-Glimmer-30B-Abliterated-GGUF":{"min":16.9,"tags":"30B,dense,meta,uncensored"}
         }
     },
     "nl2sh":{
