@@ -3,16 +3,16 @@
         "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
         },
         "models":{
-            "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3,"tags":""},
-            "mradermacher/gemma-4-31B-it-The-DECKARD-HERETIC-UNCENSORED-Thinking-i1-GGUF":{"min":12.1,"tags":"uncensored"}
+            "unsloth/gemma-4-31B-it-qat-GGUF":{"min":17.3,"tags":"31B,dense,google,unsloth"},
+            "mradermacher/gemma-4-31B-it-The-DECKARD-HERETIC-UNCENSORED-Thinking-i1-GGUF":{"min":12.1,"tags":"31B,dense,google,uncensored"}
         }
     },
     "Gemma 4 MoE":{
         "settings":{"General":{"temperature":1.0,"top-p":0.95,"top-k":64}
         },
         "models":{
-            "mradermacher/gemma-4-19B-A4B-it-The-DECKARD-Heretic-Uncensored-Thinking-i1-GGUF":{"min":8.3,"tags":"uncensored"},
-            "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2,"tags":""}
+            "mradermacher/gemma-4-19B-A4B-it-The-DECKARD-Heretic-Uncensored-Thinking-i1-GGUF":{"min":8.3,"tags":"19B,moe,google,uncensored"},
+            "unsloth/gemma-4-26B-A4B-it-qat-GGUF":{"min":14.2,"tags":"26B,moe,google"}
         }
     },
     "Qwen3.5": {
@@ -20,9 +20,9 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":1.5}
         },
         "models":{
-            "unsloth/Qwen3.5-27B-GGUF":{"min":16.7,"tags":""},
-            "llmfan46/Qwen3.5-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"tags":"uncensored"},
-            "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1,"tags":"uncensored"}
+            "unsloth/Qwen3.5-27B-GGUF":{"min":16.7,"tags":"27B,dense,qwen,unsloth"},
+            "llmfan46/Qwen3.5-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"tags":"27B,dense,qwen,uncensored"},
+            "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1,"tags":"40B,dense,qwen,uncensored"}
         }
     },
     "Qwen3.5 MoE": {
@@ -30,10 +30,9 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":1.5}
         },
         "models":{
-            "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22,"tags":""},
-            "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"uncensored"},
-            "mradermacher/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-i1-GGUF":{"min":16.1,"tags":"uncensored"},
-            "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":47.8,"tags":""}
+            "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22,"tags":"35B,moe,qwen,unsloth"},
+            "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"35B,moe,qwen,uncensored"},
+            "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":47.8,"tags":"122B,moe,qwen"}
         }
     },
     "Qwen3.6": {
@@ -41,8 +40,8 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1,"tags":""},
-            "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"tags":"uncensored"}
+            "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1,"tags":"27B,dense,qwen"},
+            "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"tags":"27B,dense,qwen,uncensored"}
         }
     },
     "Qwen3.6 MoE": {
@@ -50,65 +49,65 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7,"tags":""},
-            "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"uncensored"}
+            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7,"tags":"35B,moe,qwen"},
+            "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"35B,moe,qwen,uncensored"}
         }
     },
     "SicariusSicariiStuff": {
         "settings":{"General":{}
         },
         "models":{
-            "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"tags":"uncensored"}
+            "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"tags":"7B,dense,uncensored"}
         }
     },
     "Laguna 2.1":{
         "settings":{"General":{}
         },
         "models":{
-            "poolside/Laguna-XS-2.1-GGUF":{"min":20.3,"tags":""},
-            "unsloth/Laguna-S-2.1-GGUF":{"min":44.3,"tags":""}
+            "poolside/Laguna-XS-2.1-GGUF":{"min":20.3,"tags":"moe,laguna,unsloth"},
+            "unsloth/Laguna-S-2.1-GGUF":{"min":44.3,"tags":"moe,laguna,unsloth"}
         }
     },
     "KAT-Coder-V2.5-Dev":{
         "settings":{"General":{}
         },
         "models":{
-            "bartowski/Kwaipilot_KAT-Coder-V2.5-Dev-GGUF":{"min":14.9,"tags":""}
+            "bartowski/Kwaipilot_KAT-Coder-V2.5-Dev-GGUF":{"min":14.9,"tags":"moe,kat,coder"}
         }
     },
     "Ling-3.0-Flash":{
         "settings":{"General":{}
         },
         "models":{
-            "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":""}
+            "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":"moe,ling"}
         }
     },
     "Ling-3.0-Tiny":{
         "settings":{"General":{}
         },
         "models":{
-            "SC117/Ling-3.0-tiny-abliterated-APEX-GGUF":{"min":3.4,"tags":"uncensored"}
+            "SC117/Ling-3.0-tiny-abliterated-APEX-GGUF":{"min":3.4,"tags":"moe,ling,uncensored"}
         }
     },
     "Muse-Gimmer":{
         "settings":{"General":{}
         },
         "models":{
-            "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1,"tags":""}
+            "unsloth/Muse-Glimmer-30B-GGUF":{"min":13.1,"tags":"30B,dense,meta"}
         }
     },
     "nl2sh":{
         "settings":{"General":{}
         },
         "models":{
-            "ThorOdinson246/nl2sh-1.5b-Q4_K_M":{"min":1.0,"tags":""}
+            "ThorOdinson246/nl2sh-1.5b-Q4_K_M":{"min":1.0,"tags":"dense,nl2sh,smol"}
         }
     },
     "Deepseek-v4-Flash":{
         "settings":{"General":{}
         },
         "models":{
-            "unsloth/DeepSeek-V4-Flash-0731-GGUF":{"min":104,"tags":""}
+            "unsloth/DeepSeek-V4-Flash-0731-GGUF":{"min":104,"tags":"moe,deepseek,flash"}
         }
     },
     "Qwen3.8": {
@@ -116,7 +115,7 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.8-27B-GGUF":{"min":11.9,"tags":""}
+            "unsloth/Qwen3.8-27B-GGUF":{"min":11.9,"tags":"27B,dense,qwen"}
         }
     }
 }
