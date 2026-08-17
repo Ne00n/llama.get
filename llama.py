@@ -11,10 +11,10 @@ def fetch(url):
 print("Fetching models...")
 modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
 
-uncensored = False
-for param in sys.argv[1:]:
-    if param.lower() == "--uncensored": uncensored = True
-
+wantedTags = []
+for index, param in enumerate(sys.argv[1:]):
+    if "--tags" in param:
+        wantedTags = sys.argv[index +2].split(",")
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf",
@@ -38,7 +38,8 @@ for category, dataset in modelList.items():
             if "mmproj" in file['path']:
                 solutions["mmproj"] = file['path']
                 break
-        if uncensored and not "uncensored" in settings['tags']: continue
+        modelTags = data['tags'].split(",")
+        if wantedTags and not any(item in wantedTags for item in modelTags): continue
         if solutions['gguf']:
             if not os.path.isfile(f"models/{solutions['gguf']}"):
                 print(f"Fetching {solutions['gguf']}")
