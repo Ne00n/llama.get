@@ -32,10 +32,10 @@ for category, dataset in modelList.items():
             size = int(file['size'] / 1024**3)
             if size >= availableMemory: continue
             for target in targets:
-                if target in file['path']:
+                if target in file['path'] and not solutions['gguf']:
                     solutions["gguf"] = file['path']
                     break
-            if "mmproj" in file['path']:
+            if "mmproj" in file['path'] and not solutions['mmproj']:
                 solutions["mmproj"] = file['path']
                 break
         modelTags = data['tags'].split(",")
