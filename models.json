@@ -35,7 +35,8 @@
         "models":{
             "unsloth/Qwen3.5-35B-A3B-GGUF":{"min":22,"tags":"35B,moe,qwen,unsloth"},
             "llmfan46/Qwen3.5-35B-A3B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"35B,moe,qwen,uncensored"},
-            "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":47.8,"tags":"122B,moe,qwen"}
+            "unsloth/Qwen3.5-122B-A10B-MTP-GGUF":{"min":47.8,"tags":"122B,moe,qwen"},
+            "mudler/Qwen3.5-122B-A10B-APEX-GGUF":{"min":48.3,"tags":"122B,moe,qwen,uncensored"}
         }
     },
     "Qwen3.6": {
