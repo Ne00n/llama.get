@@ -11,10 +11,10 @@ def fetch(url):
 print("Fetching models...")
 modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
 
-sys.argv = sys.argv[1:]
 uncensored = False
-for param in sys.argv:
+for param in sys.argv[1:]:
     if param.lower() == "--uncensored": uncensored = True
+    
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf"]
