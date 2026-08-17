@@ -14,10 +14,11 @@ modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/
 uncensored = False
 for param in sys.argv[1:]:
     if param.lower() == "--uncensored": uncensored = True
-    
+
 
 mapping = {}
-targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf"]
+targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf",
+           "APEX-I-Quality.gguf","APEX-I-Balanced.gguf"]
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for category, dataset in modelList.items():
     print(f"Checking {category}")
