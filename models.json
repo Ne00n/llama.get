@@ -40,7 +40,7 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1,"tags":"27B,dense,qwen"},
+            "unsloth/Qwen3.6-27B-MTP-GGUF":{"min":17.1,"tags":"27B,dense,qwen,unsloth"},
             "llmfan46/Qwen3.6-27B-uncensored-heretic-v2-Native-MTP-Preserved-GGUF":{"min":17.2,"tags":"27B,dense,qwen,uncensored"}
         }
     },
@@ -49,7 +49,7 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7,"tags":"35B,moe,qwen"},
+            "unsloth/Qwen3.6-35B-A3B-MTP-GGUF":{"min":22.7,"tags":"35B,moe,qwen,unsloth"},
             "llmfan46/Qwen3.6-35B-A3B-uncensored-heretic-Native-MTP-Preserved-GGUF":{"min":21.8,"tags":"35B,moe,qwen,uncensored"}
         }
     },
