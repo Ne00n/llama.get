@@ -39,19 +39,20 @@ for category, dataset in modelList.items():
                 solutions["mmproj"] = file['path']
                 break
         modelTags = data['tags'].split(",")
-        if wantedTags and not any(item in wantedTags for item in modelTags): continue
         if solutions['gguf']:
             if not os.path.isfile(f"models/{solutions['gguf']}"):
+                mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
+                if wantedTags and not any(item in wantedTags for item in modelTags): continue
                 print(f"Fetching {solutions['gguf']}")
                 result = subprocess.getoutput(f'hf download --include "{solutions['gguf']}" --local-dir models/ {model}')
-            mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
         if solutions['mmproj']:
             mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
             if not os.path.isfile(f"models/{mmprojFile}"):
+                mapping[solutions['gguf']]['mmproj'] = mmprojFile
+                if wantedTags and not any(item in wantedTags for item in modelTags): continue
                 print(f"Fetching {solutions['mmproj']}")
                 result = subprocess.getoutput(f'hf download --include "{solutions['mmproj']}" --local-dir models/ {model}')
                 os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
-            mapping[solutions['gguf']]['mmproj'] = mmprojFile
 
 config = """[*]
 c = 64000
