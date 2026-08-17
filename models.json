@@ -83,6 +83,13 @@
             "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":""}
         }
     },
+    "Ling-3.0-Tiny":{
+        "settings":{"General":{}
+        },
+        "models":{
+            "SC117/Ling-3.0-tiny-abliterated-APEX-GGUF":{"min":3.4,"tags":"uncensored"}
+        }
+    },
     "Muse-Gimmer":{
         "settings":{"General":{}
         },
