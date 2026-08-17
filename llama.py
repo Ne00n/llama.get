@@ -18,7 +18,7 @@ for index, param in enumerate(sys.argv[1:]):
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf",
-           "APEX-I-Quality.gguf","APEX-I-Balanced.gguf"]
+           "APEX-I-Quality.gguf","APEX-I-Balanced.gguf","APEX-I-Compact.gguf","APEX-I-Mini.gguf"]
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for category, dataset in modelList.items():
     print(f"Checking {category}")
