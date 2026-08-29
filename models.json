@@ -85,7 +85,7 @@
         "settings":{"General":{}
         },
         "models":{
-            "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":"moe,ling"}
+            "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":"moe,ling,flash"}
         }
     },
     "Ling-3.0-Tiny":{
@@ -128,7 +128,7 @@
     },
     "Qwen3.8 Flash Next": {
         "models":{
-            "unsloth/Qwen3.8-Flash-Next-GGUF":{"min":72.5,"tags":"177B,moe,qwen"}
+            "unsloth/Qwen3.8-Flash-Next-GGUF":{"min":72.5,"tags":"177B,moe,qwen,flash"}
         }
     }
 
