@@ -11,15 +11,18 @@ def fetch(url):
 print("Fetching models...")
 modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
 
-wantedTags = []
+wantedTags, ignoreRAM = [], False
 for index, param in enumerate(sys.argv[1:]):
     if "--tags" in param:
         wantedTags = sys.argv[index +2].split(",")
+    if "--ignore" in param:
+        ignoreRAM = True
 
 mapping = {}
 targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf",
            "APEX-I-Quality.gguf","APEX-I-Balanced.gguf","APEX-I-Compact.gguf","APEX-I-Mini.gguf"]
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
+if ignoreRAM: availableMemory 128
 for category, dataset in modelList.items():
     print(f"Checking {category}")
     settings = dataset['settings']
