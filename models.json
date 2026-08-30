@@ -85,6 +85,7 @@
         "settings":{"General":{}
         },
         "models":{
+            "SC117/Ling-3.0-flash-abliterated-APEX-GGUF":{"min":60.4,"tags":"moe,ling,flash,uncensored"},
             "bloomer010/Ling-3.0-flash-GGUF":{"min":57.1,"tags":"moe,ling,flash"}
         }
     },
