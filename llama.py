@@ -55,7 +55,7 @@ for category, dataset in modelList.items():
                 if wantedTags and not all(item in modelTags for item in wantedTags): continue
                 print(f"Fetching {solutions['gguf']}")
                 result = subprocess.getoutput(f'hf download --include "*{solutions['target']}*" --local-dir models/ {model}')
-        if solutions['mmproj']:
+        if solutions['gguf'] and solutions['mmproj']:
             mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
             mapping[solutions['gguf']]['mmproj'] = mmprojFile
             if not os.path.isfile(f"models/{mmprojFile}"):
