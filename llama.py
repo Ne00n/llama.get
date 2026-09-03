@@ -42,7 +42,7 @@ for category, dataset in modelList.items():
             if size >= availableMemory: continue
             for target in targets:
                 if target in file['path'] and not solutions['gguf']:
-                    solutions["gguf"] = file['path']
+                    solutions["gguf"] = target
                     break
             if "mmproj" in file['path'] and not solutions['mmproj']:
                 solutions["mmproj"] = file['path']
