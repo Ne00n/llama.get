@@ -70,7 +70,7 @@ c = 64000
 print("Generating config.ini")
 models = os.listdir(f"models/")
 for model in models:
-    if not model.endswith(".gguf") or "mmproj" in model: continue
+    if not "gguf" in model or "mmproj" in model: continue
     if not model in mapping:
         print(f"{model} not in mapping! Skipping.")
         continue
