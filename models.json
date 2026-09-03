@@ -132,7 +132,7 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"repeat-penalty":1.0}
         },
         "models":{
-            "mradermacher/Qwen3.8-Flash-Next-Uncensored-GGUF":{"min":80.4,"tags":"177B,moe,qwen,flash,uncensored"}
+            "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF":{"min":85.2,"tags":"177B,moe,qwen,flash,uncensored"}
         }
     },
     "K2-Horizon MoE": {
