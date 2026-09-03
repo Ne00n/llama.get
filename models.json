@@ -134,6 +134,13 @@
         "models":{
             "mradermacher/Qwen3.8-Flash-Next-Uncensored-GGUF":{"min":80.4,"tags":"177B,moe,qwen,flash,uncensored"}
         }
+    },
+    "K2-Horizon MoE": {
+        "settings":{"General":{}
+        },
+        "models":{
+            "abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF":{"min":17.7,"tags":"36B,moe,ifm"}
+        }
     }
 
 }
