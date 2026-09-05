@@ -37,24 +37,21 @@ for category, dataset in modelList.items():
         files = fetch(f"https://huggingface.co/api/models/{model}/tree/main")
         files = sorted(files, key=lambda item: item['size'], reverse=True)
         solutions = {"gguf":"","target":"","mmproj":""}
-        for file in files:
-            size = int(file['size'] / 1024**3)
-            if size >= availableMemory: continue
-            for target in targets:
+        for target in targets:
+            for file in files:
+                size = int(file['size'] / 1024**3)
+                if size >= availableMemory: continue
                 if target in file['path'] and not solutions['gguf']:
                     solutions["gguf"] = file['path']
                     solutions['target'] = target
-                    break
-            if "mmproj" in file['path'] and not solutions['mmproj']:
-                solutions["mmproj"] = file['path']
-                break
-        modelTags = data['tags'].split(",")
-        if solutions['gguf']:
-            mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
-            if not os.path.isfile(f"models/{solutions['gguf']}"):
-                if wantedTags and not all(item in modelTags for item in wantedTags): continue
-                print(f"Fetching {solutions['gguf']}")
-                result = subprocess.getoutput(f'hf download --include "*{solutions['target']}*" --local-dir models/ {model}')
+                    mapping[solutions['gguf']] = {"settings":settings,"mmproj":None}
+                if "mmproj" in file['path'] and not solutions['mmproj']:
+                    solutions["mmproj"] = file['path']
+            if solutions['gguf']: break
+        if not os.path.isfile(f"models/{solutions['gguf']}"):
+            if wantedTags and not all(item in modelTags for item in wantedTags): continue
+            print(f"Fetching {solutions['gguf']}")
+            result = subprocess.getoutput(f'hf download --include "*{solutions['target']}*" --local-dir models/ {model}')
         if solutions['gguf'] and solutions['mmproj']:
             mmprojFile = solutions['gguf'].replace(".gguf",f"-{solutions['mmproj']}")
             mapping[solutions['gguf']]['mmproj'] = mmprojFile
