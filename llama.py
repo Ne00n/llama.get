@@ -49,6 +49,7 @@ for category, dataset in modelList.items():
                 if "mmproj" in file['path'] and not solutions['mmproj']:
                     solutions["mmproj"] = file['path']
             if solutions['gguf']: break
+        modelTags = data['tags'].split(",")
         if not os.path.isfile(f"models/{solutions['gguf']}"):
             if wantedTags and not all(item in modelTags for item in wantedTags): continue
             print(f"Fetching {solutions['gguf']}")
