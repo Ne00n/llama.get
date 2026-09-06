@@ -71,7 +71,8 @@
             "mudler/Laguna-XS-2.1-APEX-GGUF":{"min":12.8,"tags":"moe,laguna,uncensored,apex"},
             "poolside/Laguna-XS-2.1-GGUF":{"min":20.3,"tags":"moe,laguna,unsloth"},
             "unsloth/Laguna-S-2.1-GGUF":{"min":44.3,"tags":"moe,laguna,unsloth"},
-            "mradermacher/Laguna-S-2.1-Heretic-i1-GGUF":{"min":45.2,"tags":"moe,laguna,uncensored"}
+            "mradermacher/Laguna-S-2.1-Heretic-i1-GGUF":{"min":45.2,"tags":"moe,laguna,uncensored"},
+            "SC117/Laguna-S-2.1-Uncensored-APEX-GGUF":{"min":44.1,"tags":"moe,laguna,apex"}
         }
     },
     "KAT-Coder-V2.5-Dev":{
