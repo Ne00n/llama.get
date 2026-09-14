@@ -144,6 +144,12 @@
         "models":{
             "abenzerps/K2-Horizon-MoVA-36B-A4B-GGUF":{"min":17.7,"tags":"36B,moe,ifm"}
         }
+    },
+    "Maple MoE": {
+        "settings":{"General":{}
+        },
+        "models":{
+            "deepgrove/maple-preview-GGUF":{"min":4.98,"tags":"20B,moe,maple"}
+        }
     }
-
 }
