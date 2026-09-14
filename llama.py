@@ -22,7 +22,7 @@ for index, param in enumerate(sys.argv[1:]):
         mode = "fast"
 
 mapping = {}
-targets = ["Q6_K.gguf","Q6_K_XL.gguf","Q4_K_XL.gguf","Q4_K.gguf","Q4_K_M.gguf","UD-Q3_K_XL.gguf","IQ3_XXS.gguf",
+targets = ["Q6_K","Q6_K_XL","Q4_K_XL","Q4_K.gguf","Q4_K_M","UD-Q3_K_XL","IQ3_XXS",
            "APEX-I-Quality.gguf","APEX-Quality.gguf","APEX-I-Balanced.gguf","APEX-Balanced.gguf",
            "APEX-I-Compact.gguf","APEX-Compact.gguf","APEX-I-Mini.gguf","APEX-Mini.gguf"]
 
