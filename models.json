@@ -157,6 +157,7 @@
         },
         "models":{
             "LiquidAI/LFM2.5-8B-A1B-GGUF":{"min":4.84,"tags":"8B,moe,lfm"},
+            "mudler/LFM2.5-8B-A1B-APEX-GGUF":{"min":3.6,"tags":"8B,moe,lfm,apex"},
             "mradermacher/LFM2.5-8B-A1B-UltraCoder-L3-i1-GGUF":{"min":3.33,"tags":"8B,moe,coder"}
         }
     }
