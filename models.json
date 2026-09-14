@@ -62,7 +62,7 @@
         "settings":{"General":{}
         },
         "models":{
-            "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"tags":"7B,dense,uncensored,smol"}
+            "SicariusSicariiStuff/Assistant_Pepe_8B_GGUF":{"min":4.9,"tags":"7B,dense,uncensored,smol,pepe"}
         }
     },
     "Laguna 2.1":{
