@@ -11,7 +11,7 @@ def fetch(url):
 print("Fetching models...")
 modelList = fetch("https://raw.githubusercontent.com/Ne00n/llama.get/refs/heads/master/models.json")
 
-wantedTags, mode = [], "quality"
+wantedTags, mode = 0, "quality"
 availableMemory = (int(psutil.virtual_memory().total) / 1024 / 1024 / 1024) - 2
 for index, param in enumerate(sys.argv[1:]):
     if "--tags" in param:
@@ -19,16 +19,18 @@ for index, param in enumerate(sys.argv[1:]):
     if "--memory" in param:
         availableMemory = int(sys.argv[index +2])
     if "--fast" in param:
-        mode = "fast"
+        mode = 1
+    if "--turbo" in param:
+        mode = 2
 
 mapping = {}
 targets = ["Q6_K","Q6_K_XL","Q4_K_XL","Q4_K.gguf","Q4_K_M","UD-Q3_K_XL","IQ3_XXS",
            "APEX-I-Quality.gguf","APEX-Quality.gguf","APEX-I-Balanced.gguf","APEX-Balanced.gguf",
            "APEX-I-Compact.gguf","APEX-Compact.gguf","APEX-I-Mini.gguf","APEX-Mini.gguf"]
 
-if mode == "fast":
-    for target in list(targets):
-        if "Q6" in target or "Balanced" in target: targets.remove(target)
+for target in list(targets):
+    if mode > 0 and ("Q6" in target or "Balanced" in target): targets.remove(target)
+    if mode > 1 and ("Q4" in target or "Quality" in target): targets.remove(target)
 
 for category, dataset in modelList.items():
     print(f"Checking {category}")
