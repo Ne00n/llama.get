@@ -66,7 +66,7 @@ for category, dataset in modelList.items():
                 os.rename(f"models/{solutions['mmproj']}",f"models/{mmprojFile}")
 
 config = """[*]
-c = 64000
+c = 128000
 """
 print("Generating config.ini")
 models = os.listdir(f"models/")
