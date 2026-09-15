@@ -126,8 +126,8 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"spec-type":"draft-mtp","spec-draft-n-max":"2"}
         },
         "models":{
-            "unsloth/Qwen3.8-27B-GGUF":{"min":11.9,"tags":"27B,dense,qwen"},
-            "Blackfrost-AI/Qwen3.8-27B-ABLITERATED-GGUF":{"min":12.3,"tags":"27B,dense,qwen,uncensored"}
+            "unsloth/Qwen3.8-27B-GGUF":{"min":11.9,"tags":"27B,dense,qwen,3.8"},
+            "Blackfrost-AI/Qwen3.8-27B-ABLITERATED-GGUF":{"min":12.3,"tags":"27B,dense,qwen,uncensored,3.8"}
         }
     },
     "Qwen3.8 Flash Next": {
@@ -135,7 +135,7 @@
                     "Thinking":{"temperature":1.0,"top-p":0.95,"top-k":20,"min-p":0.0,"presence-penalty":0.0,"repeat-penalty":1.0}
         },
         "models":{
-            "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF":{"min":85.2,"tags":"177B,moe,qwen,flash,uncensored"}
+            "orcarouter/Qwen3.8-Flash-Next-Uncensored-GGUF":{"min":85.2,"tags":"177B,moe,qwen,flash,uncensored,3.8"}
         }
     },
     "K2-Horizon MoE": {
