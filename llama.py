@@ -28,7 +28,7 @@ targets = ["Q6_K","Q6_K_XL","Q4_K_XL","Q4_K.gguf","Q4_K_M","UD-Q3_K_XL","IQ3_XXS
 
 if mode == "fast":
     for target in list(targets):
-        if "Q6" in target or "Quality" in target: targets.remove(target)
+        if "Q6" in target or "Balanced" in target: targets.remove(target)
 
 for category, dataset in modelList.items():
     print(f"Checking {category}")
