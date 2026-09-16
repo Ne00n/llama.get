@@ -149,7 +149,7 @@
         "settings":{"General":{}
         },
         "models":{
-            "deepgrove/maple-preview-GGUF":{"min":4.98,"tags":"20B,moe,maple"}
+            "deepgrove/maple-preview-GGUF":{"min":4.98,"tags":"20B,moe,maple,smol"}
         }
     },
     "LFM2.5 MoE": {
@@ -167,6 +167,13 @@
         "models":{
             "abenzerps/Nex-N2.5-mini-GGUF":{"min":13.62,"tags":"moe,nex"},
             "MrFuzzihead/Nex-N2.5-mini-APEX-GGUF":{"min":13.5,"tags":"moe,nex,apex"}
+        }
+    },
+    "MiniCPM5": {
+        "settings":{"General":{}
+        },
+        "models":{
+            "Abiray/MiniCPM5-2B-heretic-abliterated-GGUF":{"min":1.29,"tags":"2B,dense,uncensored,smol"}
         }
     }
 }
